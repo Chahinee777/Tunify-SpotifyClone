@@ -16,7 +16,7 @@ import { IoMdAdd } from "react-icons/io";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 
-const stripePromise = loadStripe("pk_test_51QQVyGP7egOQ2iEm5ivVDGXfsIdE7WaozKHAahtdokUT5jzLSZ7HBrn9zWBDgVawf6hPAjdbADDjqUIKXBjS0a0100CWr8DVIn");
+const stripePromise = loadStripe("");
 
 interface Proptype {
   active: string;
@@ -55,7 +55,7 @@ const Slidebar = (props: Proptype) => {
     const stripe = await stripePromise;
     try {
       const response = await axios.post("http://localhost:8080/api/v1/stripe/create-checkout-session", {
-        priceId: "price_1QQw7NP7egOQ2iEmSmS1AJRn", // Replace with your price ID
+        priceId: "", // Replace with your price ID
         username: userProfile?.username,
       });
 
